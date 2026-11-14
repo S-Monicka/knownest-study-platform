@@ -1,0 +1,6 @@
+{
+  "name": "Luminous Study",
+  "description": "Upload lecture notes to synthesize key concepts, 10 interactive flashcards, and a 10-question scored quiz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

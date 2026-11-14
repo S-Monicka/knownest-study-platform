@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #f8f9ff;
+  --color-canvas-well: #eff4ff;
+  --color-ink: #0b1c30;
+  --color-ink-muted: #434655;
+  --color-primary-brand: #004ac6;
+  --color-primary-action: #2563eb;
+  --color-secondary-accent: #6b38d4;
+  --color-emerald-mastered: #006242;
+  --color-coral-attention: #ba1a1a;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: #f8f9ff;
+    color: #0b1c30;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+/* 3D Flashcard Flip Utilities */
+.card-perspective {
+  perspective: 1200px;
+}
+
+.card-preserve-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-preserve-3d {
+    transition: transform 0.01ms linear;
+  }
+}
+
+/* Rich Lecture Notes Editor Styling */
+.rich-notes-editor:empty::before {
+  content: attr(data-placeholder);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.rich-notes-editor h2,
+.rich-notes-editor h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0b1c30;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.rich-notes-editor ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+  margin: 0.4rem 0;
+}
+
+.rich-notes-editor ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+  margin: 0.4rem 0;
+}
+
+.rich-notes-editor li {
+  margin: 0.2rem 0;
+}
+
+.rich-notes-editor img {
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  margin: 0.75rem 0;
+  object-fit: contain;
+}
+
